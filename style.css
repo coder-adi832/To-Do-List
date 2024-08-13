@@ -12,6 +12,8 @@
     position: absolute;
     background-image: linear-gradient(135deg,#00aab0,#e4fffe);
     min-height: 44vh;
+    max-height: 574px;
+    overflow-y: auto;
     width: 34vw;
     top: 13%;
     left: 8%;
@@ -44,6 +46,9 @@
     padding-left: 5%;
     font-size: 18px;
 }
+.task-enter input:focus{
+    outline: none;
+}
 .task-enter button{
     height: 50px;
     border: none;
@@ -57,14 +62,46 @@
 #list-container{
     margin-top: 3%;
     list-style: none;
-    font-size: 18px;
-    line-height: 25px;
-    background-color: red;
-}   
-#list-container li::before{
+    font-size: 22px;
+    line-height: 30px;
+    padding-left: 6%;
+    align-items: center;
+    position: relative;
+}
+#list-container li{
+    width: 80%;
+    padding-left: 3%;
+    border-radius: 20px;
+}
+#list-container li:hover{
+    background-color: #409c9b80;
+
+}
+
+.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+.checked::before{
     content: ' ';
-    /* position: absolute; */
     height: 25px;
     width: 25px;
-    background-image: url("media/icons8-checkbox-80.png");
+    left: 0;
+    position: absolute;
+    background-image: url("media/icons8-checked-24.png");
+    background-position: center;
+}
+
+#list-container span{
+    position: absolute;
+    right: 0;
+    width: 40px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 900;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#list-container span:hover{
+    transform: scale(1.3);
 }
